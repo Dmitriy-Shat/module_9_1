@@ -1,0 +1,30 @@
+def apply_all_func(int_list, *functions):
+    results = {}
+    for function in functions:
+        fun = function(int_list)
+        results[function.__name__] = fun
+    return results
+    
+def min_(args):
+    res = min(args)
+    return res 
+    
+def max_(args):
+    res = max(args)
+    return res 
+    
+def len_(args):
+    res = len(args)
+    return res 
+    
+def sum_(args):
+    res = sum(args)
+    return res 
+    
+def sorted_(args):
+    res = sorted(args)
+    return res
+    
+print(apply_all_func([6, 20, 15, 9], max, min))
+print(apply_all_func([6, 20, 15, 9], len, sum, sorted))    
+    
